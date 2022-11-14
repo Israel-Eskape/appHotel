@@ -75,7 +75,7 @@ CREATE TABLE `hotel_check_in` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
-
+#php artisan make:migration create_hotel_check_ins_table --create=hotelCheckIns
 CREATE TABLE `hotel_reservation_status` (
   `id_status` INT PRIMARY KEY,
   `name` VARCHAR(255),
@@ -87,6 +87,8 @@ CREATE TABLE `hotel_reservation_status` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
+
+#php artisan make:migration create_hotel_reservation_status_table --create=hotelReservationStatus
 
 CREATE TABLE `hotel_role` (
   `id_role` INT PRIMARY KEY,
@@ -100,6 +102,7 @@ CREATE TABLE `hotel_role` (
   `deleted_at` timestamp
 );
 
+#php artisan make:migration create_hotel_roles_table --create=hotelRoles
 CREATE TABLE `hotel_cost` (
   `id_cost` INT PRIMARY KEY,
   `price` double,
@@ -113,6 +116,7 @@ CREATE TABLE `hotel_cost` (
   `deleted_at` timestamp
 );
 
+#php artisan make:migration create_hotel_costs_table --create=hotelCosts
 CREATE TABLE `hotel_pay` (
   `id_pay` INT PRIMARY KEY,
   `name` double,
@@ -124,6 +128,8 @@ CREATE TABLE `hotel_pay` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
+
+#php artisan make:migration create_hotel_pays_table --create=hotelPays
 
 CREATE TABLE `hotel_people` (
   `id_people` INT PRIMARY KEY,
