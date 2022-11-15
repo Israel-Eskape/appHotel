@@ -301,6 +301,8 @@ CREATE TABLE `hotel_customer` (
   `deleted_at` timestamp
 );
 
+#php artisan make:migration create_hotel_customers_table --create=hotelCustomers
+
 CREATE TABLE `hotel_cancellation` (
   `id_cancellation` INT PRIMARY KEY,
   `reason` VARCHAR(255),
@@ -316,3 +318,4 @@ CREATE TABLE `hotel_cancellation` (
   `deleted_at` timestamp
 );
 
+#php artisan make:migration create_hotel_cancellations_table --create=hotelCancellations
