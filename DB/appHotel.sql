@@ -134,6 +134,7 @@ CREATE TABLE `hotel_pay` (
 CREATE TABLE `hotel_people` (
   `id_people` INT PRIMARY KEY,
   `name` VARCHAR(255),
+  `first_name` VARCHAR(255),
   `last_name` VARCHAR(255),
   `birthday` date,
   `address` VARCHAR(255),
@@ -167,6 +168,8 @@ CREATE TABLE `hotel_employee` (
   `deleted_at` timestamp
 );
 
+#php artisan make:migration create_hotel_employees_table --create=hotelEmployees
+
 CREATE TABLE `iddtec_employee` (
   `id_employee` INT PRIMARY KEY,
   `rfc` VARCHAR(255),
@@ -181,6 +184,8 @@ CREATE TABLE `iddtec_employee` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
+
+#php artisan make:migration create_iddtec_employees_table --create=iddtecEmployees
 
 CREATE TABLE `hotel_iddtec` (
   `id_iddtec` INT PRIMARY KEY,
