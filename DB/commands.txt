@@ -1,0 +1,52 @@
+// ya instaladas php y composer
+
+1.- Crear proyecto de laravel 
+        composer create-project laravel/laravel nameProject
+2.- Configurar la base de datos en .env
+3.- Ejecutar el servidor de laraver 
+        php artisan serve
+4.- crear las migraciones de las tablas 
+        php artisan make:migration create_hotel_status_entitys_table --create=hotelStatusEntitys
+        php artisan make:migration create_hotel_room_categorys_table --create=hotelRoomCategorys
+        php artisan make:migration create_hotel_type_rooms_table --create=hotelTypeRooms
+        php artisan make:migration create_hotel_polls_table --create=hotelPolls
+        php artisan make:migration create_hotel_check_outs_table --create=hotelCheckOuts
+        php artisan make:migration create_hotel_check_ins_table --create=hotelCheckIns
+        php artisan make:migration create_hotel_reservation_status_table --create=hotelReservationStatus
+        php artisan make:migration create_hotel_roles_table --create=hotelRoles
+        php artisan make:migration create_hotel_costs_table --create=hotelCosts
+        php artisan make:migration create_hotel_pays_table --create=hotelPays
+        php artisan make:migration create_hotel_peoples_table --create=hotelPeoples
+        php artisan make:migration create_hotel_employees_table --create=hotelEmployees
+        php artisan make:migration create_iddtec_employees_table --create=iddtecEmployees
+        php artisan make:migration create_hotel_iddtecs_table --create=hotelIddtecs
+        php artisan make:migration create_hotel_rooms_table --create=hotelRooms
+        php artisan make:migration create_hotel_hotels_table --create=hotelHotels
+        php artisan make:migration create_hotel_reservations_table --create=hotelReservations
+        php artisan make:migration create_hotel_customers_table --create=hotelCustomers
+        php artisan make:migration create_hotel_cancellations_table --create=hotelCancellations
+
+5.- Crear los modelos
+        php artisan make:model hotelStatusEntity
+        php artisan make:model hotelRoomCategory
+        php artisan make:model hotelTypeRooms
+        php artisan make:model hotelPoll
+        php artisan make:model hotelCheckOut
+        php artisan make:model hotelCheckIn
+        php artisan make:model hotelReservationStatu
+        php artisan make:model hotelRole
+        php artisan make:model hotelCost
+        php artisan make:model hotelPay
+        php artisan make:model hotelPeople
+        php artisan make:model hotelEmployee
+        php artisan make:model iddtecEmployee
+        php artisan make:model hotelIddtec
+        php artisan make:model hotelRoom
+        php artisan make:model hotelHotel
+        php artisan make:model hotelReservation
+        php artisan make:model hotelCustomer
+        php artisan make:model hotelCancellation
+
+6.- Crear los Factories
+        php artisan make:factory hotelStatusEntityFactory --model=hotelStatusEntity
+        php artisan make:factory hotelRoomCategoryFactory --model=hotelRoomCategoryFactory

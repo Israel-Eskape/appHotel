@@ -9,7 +9,6 @@ CREATE TABLE `hotel_statusEntity` (
   `deleted_at` timestamp
 );
 
-#php artisan make:migration create_hotel_status_entitys_table --create=hotelStatusEntitys
 CREATE TABLE `hotel_room_category` (
   `id_category` INT PRIMARY KEY,
   `name` VARCHAR(255),
@@ -21,7 +20,6 @@ CREATE TABLE `hotel_room_category` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
-# php artisan make:migration create_hotel_room_categorys_table --create=hotelRoomCategorys
 
 CREATE TABLE `hotel_type_room` (
   `id_type` INT PRIMARY KEY,
@@ -34,7 +32,7 @@ CREATE TABLE `hotel_type_room` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
-#php artisan make:migration create_hotel_type_rooms_table --create=hotelTypeRooms
+
 CREATE TABLE `hotel_poll` (
   `id_poll` INT PRIMARY KEY,
   `comments` VARCHAR(255),
@@ -46,7 +44,6 @@ CREATE TABLE `hotel_poll` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
-#php artisan make:migration create_hotel_polls_table --create=hotelPolls
 
 CREATE TABLE `hotel_check_out` (
   `id_checkOut` INT PRIMARY KEY,
@@ -63,7 +60,6 @@ CREATE TABLE `hotel_check_out` (
   `deleted_at` timestamp
 );
 
-#php artisan make:migration create_hotel_check_outs_table --create=hotelCheckOuts
 CREATE TABLE `hotel_check_in` (
   `id_checkIn` INT PRIMARY KEY,
   `date_chech_in` date,
@@ -75,7 +71,7 @@ CREATE TABLE `hotel_check_in` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
-#php artisan make:migration create_hotel_check_ins_table --create=hotelCheckIns
+
 CREATE TABLE `hotel_reservation_status` (
   `id_status` INT PRIMARY KEY,
   `name` VARCHAR(255),
@@ -87,8 +83,6 @@ CREATE TABLE `hotel_reservation_status` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
-
-#php artisan make:migration create_hotel_reservation_status_table --create=hotelReservationStatus
 
 CREATE TABLE `hotel_role` (
   `id_role` INT PRIMARY KEY,
@@ -102,7 +96,6 @@ CREATE TABLE `hotel_role` (
   `deleted_at` timestamp
 );
 
-#php artisan make:migration create_hotel_roles_table --create=hotelRoles
 CREATE TABLE `hotel_cost` (
   `id_cost` INT PRIMARY KEY,
   `price` double,
@@ -116,7 +109,6 @@ CREATE TABLE `hotel_cost` (
   `deleted_at` timestamp
 );
 
-#php artisan make:migration create_hotel_costs_table --create=hotelCosts
 CREATE TABLE `hotel_pay` (
   `id_pay` INT PRIMARY KEY,
   `name` double,
@@ -128,8 +120,6 @@ CREATE TABLE `hotel_pay` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
-
-#php artisan make:migration create_hotel_pays_table --create=hotelPays
 
 CREATE TABLE `hotel_people` (
   `id_people` INT PRIMARY KEY,
@@ -151,8 +141,6 @@ CREATE TABLE `hotel_people` (
   `deleted_at` timestamp
 );
 
-#php artisan make:migration create_hotel_peoples_table --create=hotelPeoples
-
 CREATE TABLE `hotel_employee` (
   `id_employee` INT PRIMARY KEY,
   `rfc` VARCHAR(255),
@@ -168,8 +156,6 @@ CREATE TABLE `hotel_employee` (
   `deleted_at` timestamp
 );
 
-#php artisan make:migration create_hotel_employees_table --create=hotelEmployees
-
 CREATE TABLE `iddtec_employee` (
   `id_employee` INT PRIMARY KEY,
   `rfc` VARCHAR(255),
@@ -184,8 +170,6 @@ CREATE TABLE `iddtec_employee` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
-
-#php artisan make:migration create_iddtec_employees_table --create=iddtecEmployees
 
 CREATE TABLE `hotel_iddtec` (
   `id_iddtec` INT PRIMARY KEY,
@@ -204,8 +188,6 @@ CREATE TABLE `hotel_iddtec` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
-
-#php artisan make:migration create_hotel_iddtecs_table --create=hotelIddtecs
 
 CREATE TABLE `hotel_room` (
   `id_room` INT PRIMARY KEY,
@@ -228,7 +210,6 @@ CREATE TABLE `hotel_room` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
-#php artisan make:migration create_hotel_rooms_table --create=hotelRooms
 
 CREATE TABLE `hotel_hotel` (
   `id_hotel` INT PRIMARY KEY,
@@ -253,7 +234,6 @@ CREATE TABLE `hotel_hotel` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
-#php artisan make:migration create_hotel_hotels_table --create=hotelHotels
 
 CREATE TABLE `hotel_reservation` (
   `id_reservation` INT PRIMARY KEY,
@@ -283,7 +263,6 @@ CREATE TABLE `hotel_reservation` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
-#php artisan make:migration create_hotel_reservations_table --create=hotelReservations
 
 CREATE TABLE `hotel_customer` (
   `id_customer` INT PRIMARY KEY,
@@ -301,8 +280,6 @@ CREATE TABLE `hotel_customer` (
   `deleted_at` timestamp
 );
 
-#php artisan make:migration create_hotel_customers_table --create=hotelCustomers
-
 CREATE TABLE `hotel_cancellation` (
   `id_cancellation` INT PRIMARY KEY,
   `reason` VARCHAR(255),
@@ -317,5 +294,3 @@ CREATE TABLE `hotel_cancellation` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
-
-#php artisan make:migration create_hotel_cancellations_table --create=hotelCancellations
