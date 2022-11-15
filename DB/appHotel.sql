@@ -205,6 +205,8 @@ CREATE TABLE `hotel_iddtec` (
   `deleted_at` timestamp
 );
 
+#php artisan make:migration create_hotel_iddtecs_table --create=hotelIddtecs
+
 CREATE TABLE `hotel_room` (
   `id_room` INT PRIMARY KEY,
   `name` VARCHAR(255),
