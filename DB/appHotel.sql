@@ -253,7 +253,7 @@ CREATE TABLE `hotel_hotel` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
-#php artisan make:migration create_hotel_rooms_table --create=hotelRooms
+#php artisan make:migration create_hotel_hotels_table --create=hotelHotels
 
 CREATE TABLE `hotel_reservation` (
   `id_reservation` INT PRIMARY KEY,
@@ -283,6 +283,7 @@ CREATE TABLE `hotel_reservation` (
   `updated_at` timestamp,
   `deleted_at` timestamp
 );
+#php artisan make:migration create_hotel_reservations_table --create=hotelReservations
 
 CREATE TABLE `hotel_customer` (
   `id_customer` INT PRIMARY KEY,
