@@ -14,11 +14,12 @@ class hotelStatusEntityFactory extends Factory
      *
      * @return array<string, mixed>
      */
+   #   protected $model = hotelStatusEntity::class;
     public function definition()
     {
         return [
-            "name"=> $this->faker->name,
-            "description"=> fake()->text
+            "name"=> $this->faker->name(),
+            "description"=>$this->faker->text()
         ];
     }
 }

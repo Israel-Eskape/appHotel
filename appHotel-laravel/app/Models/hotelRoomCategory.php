@@ -8,12 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class hotelRoomCategory extends Model
 {
     use HasFactory;
-    protected $table ="hotelRoomCategorys";
+    protected $table = 'hotelRoomCategorys';
+
     protected $fillable = [
-        "name",
-        "description"
+        'name',
+        'description',
+        'hotelStatusEntity_id'
+
     ];
     public function hotelStatusEntity(){
-        return $this->hasMany(hotelStatusEntitys::class);
+        return $this->belongsTo(hotelStatusEntity::class);
     }
 }

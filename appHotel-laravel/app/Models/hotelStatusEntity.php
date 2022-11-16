@@ -13,12 +13,12 @@ class hotelStatusEntity extends Model
 
     protected $fillable = [
         "name",
-        "description"
+        "description",
+
     ];
 
     //relations
-    public function hotelRoomCategory(){
-        return $this->belongsTo(hotelRoomCategorys::class);
+    public function hotelRoomCategorys(){
+        return $this->hasMany(hotelRoomCategory::class,'hotelStatusEntity_id');
     }
-
-}
+}   
