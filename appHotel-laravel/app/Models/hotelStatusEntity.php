@@ -18,7 +18,13 @@ class hotelStatusEntity extends Model
     ];
 
     //relations
+    /*public function hotelRoomCategorys(){
+        return $this->hasMany(hotelRoomCategory::class,'hotelStatusEntity_id');
+    }*/
     public function hotelRoomCategorys(){
         return $this->hasMany(hotelRoomCategory::class,'hotelStatusEntity_id');
+    }
+    public function hotelTypeRooms(){
+        return $this->hasMany(hotelTypeRoom::class,'hotelStatusEntity_id');
     }
 }   
