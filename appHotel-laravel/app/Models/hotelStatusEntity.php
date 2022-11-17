@@ -27,4 +27,7 @@ class hotelStatusEntity extends Model
     public function hotelTypeRooms(){
         return $this->hasMany(hotelTypeRoom::class,'hotelStatusEntity_id');
     }
+    public function hotelPolls(){
+        return $this->hasMany(hotelPoll::class,'hotelStatusEntity_id');
+    }
 }   

@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\hotelStatusEntity::factory(2)
             ->hasHotelRoomCategorys(1)
             ->hasHotelTypeRooms(1)
+            ->hasHotelPolls(1)
             ->create();
         
     }
