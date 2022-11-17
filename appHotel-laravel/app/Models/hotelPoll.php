@@ -8,8 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class hotelPoll extends Model
 {
     use HasFactory;
-    protected $table ="";
+    protected $table = "hotelPools";
     protected $fillable = [
-        
+        'comments',
+        "satisfaction",
+        "hotelStatusEntity_id"
+
     ];
 }

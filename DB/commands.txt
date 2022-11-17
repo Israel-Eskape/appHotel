@@ -50,5 +50,22 @@
 6.- Crear los Factories
         php artisan make:factory hotelStatusEntityFactory --model=hotelStatusEntity
         php artisan make:factory hotelRoomCategoryFactory --model=hotelRoomCategoryFactory
+        php artisan make:factory hotelTypeRoomFactory --model=hotelTypeRoomFactory
+        php artisan make:factory hotelPollFactory --model=hotelPollFactory
+        php artisan make:factory hotelCheckOutFactory --model=hotelCheckOutFactory
+        php artisan make:factory hotelCheckInFactory --model=hotelCheckInFactory
+        php artisan make:factory hotelReservationStatuFactory --model=hotelReservationStatuFactory
+        php artisan make:factory hotelRoleFactory --model=hotelRoleFactory
+        php artisan make:factory hotelCostFactory --model=hotelCostFactory
+        php artisan make:factory hotelPayFactory --model=hotelPayFactory
+        php artisan make:factory hotelPeopleFactory --model=hotelPeopleFactory
+        php artisan make:factory hotelEmployeeFactory --model=hotelEmployeeFactory
+        php artisan make:factory iddtecEmployeeFactory --model=iddtecEmployeeFactory
+        php artisan make:factory hotelIddtecFactory --model=hotelIddtecFactory
+        php artisan make:factory hotelRoomFactory --model=hotelRoomCategoryFactory
+        php artisan make:factory hotelHotelFactory --model=hotelHotelFactory
+        php artisan make:factory hotelReservationFactory --model=hotelReservationFactory
+        php artisan make:factory hotelCustomerFactory --model=hotelCustomerFactory
+        php artisan make:factory hotelCancellationFactory --model=hotelCancellationFactory 
 
 7.- php artisan db:seed para correr los factory 

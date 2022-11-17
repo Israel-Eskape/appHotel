@@ -9,9 +9,12 @@ class hotelCancellation extends Model
 {
     use HasFactory;
     
-    protected $table ="";
+    protected $table = "hotelCancellations";
     
     protected $fillable = [
-
+        'reason',
+        'refound',
+        'hotelReservation_id',
+        'hotelStatusEntity_id'
     ];
 }

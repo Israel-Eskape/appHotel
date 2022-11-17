@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name',50);
             $table->text('description');
-            $table->string('addres',100);
+            $table->string('address',100);
             $table->string('phone',20);
             $table->string('email',50);
             $table->unsignedBigInteger('hotelIddtec_id');

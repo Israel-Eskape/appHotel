@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class hotelPay extends Model
 {
     use HasFactory;
-    protected $table ="";
+    protected $table = "hotelPays";
     protected $fillable = [
-        
+        'name',
+        'description',
+        'hotelStatusEntity_id'
     ];
 }
