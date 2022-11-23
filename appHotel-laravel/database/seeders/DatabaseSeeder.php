@@ -19,11 +19,17 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        \App\Models\hotelStatusEntity::factory(2)
+        /*\App\Models\hotelStatusEntity::factory(1)
             ->hasHotelRoomCategorys(1)
             ->hasHotelTypeRooms(1)
             ->hasHotelPolls(1)
-            ->create();
-        
+            ->hasHotelCheckIns(1)
+            ->hasHotelCheckOuts(1)
+            ->create();*/
+        \App\Models\hotelStatusEntity::factory(2)
+        ->hasHotelPolls(3)
+        ->hasHotelCheckOuts(3)
+        ->create();
+#    \App\Models\hotelCheckOut::factory(3)->create();
     }
 }

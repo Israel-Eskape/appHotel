@@ -1,17 +1,51 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ */
+
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
-class hotelRole extends Model
+/**
+ * Class HotelRole
+ * 
+ * @property int $id
+ * @property string $name
+ * @property string $description
+ * @property int $hotelStatusEntity_id
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * 
+ * @property HotelStatusEntity $hotel_status_entity
+ * @property Collection|HotelPeople[] $hotel_peoples
+ *
+ * @package App\Models
+ */
+class HotelRole extends Model
 {
-    use HasFactory;
-    protected $table = "hotelRoles";
-    protected $fillable = [
-        'name',
-        'description',
-        'hotelStatusEntity_id'
-    ];
+	protected $table = 'hotelRoles';
+
+	protected $casts = [
+		'hotelStatusEntity_id' => 'int'
+	];
+
+	protected $fillable = [
+		'name',
+		'description',
+		'hotelStatusEntity_id'
+	];
+
+	public function hotel_status_entity()
+	{
+		return $this->belongsTo(HotelStatusEntity::class);
+	}
+
+	public function hotel_peoples()
+	{
+		return $this->hasMany(HotelPeople::class);
+	}
 }

@@ -20,7 +20,8 @@ class hotelRoomCategoryFactory extends Factory
     {
         return [
             'name'=> $this->faker->name(),
-            'description'=>$this->faker->text()
+            'description'=>$this->faker->text(),
+            'hotelStatusEntity_id'=>$this->faker->numberBetween(1,5)
         ];
     }
 }

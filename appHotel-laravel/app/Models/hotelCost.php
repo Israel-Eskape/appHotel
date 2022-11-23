@@ -1,18 +1,56 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ */
+
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
-class hotelCost extends Model
+/**
+ * Class HotelCost
+ * 
+ * @property int $id
+ * @property float $price
+ * @property float $iva
+ * @property float $discount
+ * @property int $hotelStatusEntity_id
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * 
+ * @property HotelStatusEntity $hotel_status_entity
+ * @property Collection|HotelRoom[] $hotel_rooms
+ *
+ * @package App\Models
+ */
+class HotelCost extends Model
 {
-    use HasFactory;
-    protected $table = "hotelCosts";
-    protected $fillable = [
-        'price',
-        'iva',
-        'discount',
-        'hotelStatusEntity_id'
-    ];
+	protected $table = 'hotelCosts';
+
+	protected $casts = [
+		'price' => 'float',
+		'iva' => 'float',
+		'discount' => 'float',
+		'hotelStatusEntity_id' => 'int'
+	];
+
+	protected $fillable = [
+		'price',
+		'iva',
+		'discount',
+		'hotelStatusEntity_id'
+	];
+
+	public function hotel_status_entity()
+	{
+		return $this->belongsTo(HotelStatusEntity::class);
+	}
+
+	public function hotel_rooms()
+	{
+		return $this->hasMany(HotelRoom::class);
+	}
 }

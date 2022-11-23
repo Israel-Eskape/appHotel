@@ -24,7 +24,6 @@ return new class extends Migration
                             ->on('hotelPolls')
                             ->onUpdate('cascade')
                             ->onDelete('cascade');
-
             $table->foreign('hotelStatusEntity_id')
                             ->references('id')
                             ->on('hotelStatusEntitys')
