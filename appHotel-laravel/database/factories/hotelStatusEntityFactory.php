@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\hotelStatusEntity>
  */
-class hotelStatusEntityFactory extends Factory
+class HotelStatusEntityFactory extends Factory
 {
     /**
      * Define the model's default state.

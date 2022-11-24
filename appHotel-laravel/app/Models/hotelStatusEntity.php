@@ -49,6 +49,10 @@ class HotelStatusEntity extends Model
 		'description'
 	];
 
+	protected $hidden = [
+		'created_at',
+		'updated_at'
+	];
 	public function hotel_cancellations()
 	{
 		return $this->hasMany(HotelCancellation::class);

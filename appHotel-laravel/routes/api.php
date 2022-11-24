@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('hotelStatusEntitys',[\App\Http\Controllers\hotelStatusEntityController::class,'index']);
+Route::get('hotelStatusEntitys/{hotelStatusEntity}',[\App\Http\Controllers\hotelStatusEntityController::class,'show']);
+

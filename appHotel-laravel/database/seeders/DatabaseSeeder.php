@@ -26,10 +26,10 @@ class DatabaseSeeder extends Seeder
             ->hasHotelCheckIns(1)
             ->hasHotelCheckOuts(1)
             ->create();*/
-        \App\Models\hotelStatusEntity::factory(2)
-        ->hasHotelPolls(3)
-        ->hasHotelCheckOuts(3)
-        ->create();
+        \App\Models\HotelStatusEntity::factory(2)->create();
+#        ->hasHotelPolls(3)
+#        ->hasHotelCheckOuts(3)
+        
 #    \App\Models\hotelCheckOut::factory(3)->create();
     }
 }

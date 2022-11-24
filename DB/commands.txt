@@ -69,3 +69,6 @@
         php artisan make:factory hotelCancellationFactory --model=hotelCancellationFactory 
 
 7.- php artisan db:seed para correr los factory 
+
+8.- crear controladores se genera para todos los modelos
+        php artisan make:controller hotelStatusEntityController --api
