@@ -39,12 +39,12 @@ class HotelTypeRoom extends Model
 		'hotelStatusEntity_id'
 	];
 
-	public function hotel_status_entity()
+	public function hotelStatusEntity()
 	{
-		return $this->belongsTo(HotelStatusEntity::class);
+		return $this->belongsTo(HotelStatusEntity::class,'hotelStatusEntity_id');
 	}
 
-	public function hotel_rooms()
+	public function hotelRooms()
 	{
 		return $this->hasMany(HotelRoom::class);
 	}

@@ -15,3 +15,9 @@ INSERT INTO hotelReservationStatus (name,description,hotelStatusEntity_id) VALUE
 
 INSERT INTO hotelRoomCategorys (name,description,hotelStatusEntity_id) VALUES ('Swing','Cuenta con todo incluido',1);
 INSERT INTO hotelRoomCategorys (name,description,hotelStatusEntity_id) VALUES ('Jr','Cuenta con la mitad de cosas',1);
+INSERT INTO hotelRoomCategorys (name,description,hotelStatusEntity_id) VALUES ('Estandar','Cuenta con lo escencial de una habitación',1);
+
+INSERT INTO hotelTypeRooms (name,description,hotelStatusEntity_id) VALUES ('Individual','Es una habitación con una cama individual, ideal para una persona.',1);
+INSERT INTO hotelTypeRooms (name,description,hotelStatusEntity_id) VALUES ('Doble','Es una habitación con dos camas ideal para amigos y parejas.',1);
+INSERT INTO hotelTypeRooms (name,description,hotelStatusEntity_id) VALUES ('Familiar','Es una habitación cn una cama matrimonial y una cama individual ideal para ir en familia.',1);
+INSERT INTO hotelTypeRooms (name,description,hotelStatusEntity_id) VALUES ('Suite','Es una habitación con una cama matrimonial, ofrece más espacio y más mobiliario. Incluyen una pequeña sala, área de comedor y una zona equipada como oficina.',1);

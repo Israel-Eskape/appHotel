@@ -25,4 +25,11 @@ Route::get('hotelStatusEntitys',[\App\Http\Controllers\hotelStatusEntityControll
 Route::get('hotelStatusEntitys/{hotelStatusEntity}',[\App\Http\Controllers\hotelStatusEntityController::class,'show']);
 
 Route::get('hotelRoomCategorys',[\App\Http\Controllers\hotelRoomCategoryController::class,'index']);
-Route::get('hotelRoomCategorys/categorys',[\App\Http\Controllers\hotelRoomCategoryController::class,'indexActivate']);
+Route::get('hotelRoomCategorys/categorys',[\App\Http\Controllers\hotelRoomCategoryController::class,'indexActivo']);
+Route::get('hotelRoomCategorys/{hotelRoomCategory}',[\App\Http\Controllers\hotelRoomCategoryController::class,'show']);
+Route::delete('hotelRoomCategorys/{hotelRoomCategory}',[\App\Http\Controllers\hotelRoomCategoryController::class,'detroy']);
+
+Route::get('hotelTypeRooms',[\App\Http\Controllers\hotelTypeRoomController::class,'index']);
+Route::get('hotelTypeRooms/categorys',[\App\Http\Controllers\hotelTypeRoomController::class,'indexActivo']);
+Route::get('hotelTypeRooms/{hotelTypeRoom}',[\App\Http\Controllers\hotelTypeRoomController::class,'show']);
+Route::delete('hotelTypeRooms/{hotelTypeRoom}',[\App\Http\Controllers\hotelTypeRoomController::class,'detroy']);

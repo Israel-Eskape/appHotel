@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\hotelRoomCategory;
+use App\Models\hotelTypeRoom;
 
-class hotelRoomCategoryController extends Controller
+class hotelTypeRoomController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,16 +14,15 @@ class hotelRoomCategoryController extends Controller
      */
     public function index()
     {
-        $hotelRoomCategorys = hotelRoomCategory::with(['hotelStatusEntity:id,name'])->get();
-        return \response()->json($hotelRoomCategorys,200);
+        $hotelTypeRooms = hotelTypeRoom::with(['hotelStatusEntity:id,name'])->get();
+        return \response()->json($hotelTypeRooms,200);
     }
     public function indexActivo (){
-        $hotelRoomCategorys = hotelRoomCategory::with(['hotelStatusEntity:id,name'])
+        $hotelTypeRooms = hotelTypeRoom::with(['hotelStatusEntity:id,name'])
                                                         ->where('hotelStatusEntity_id','=','1')
                                                         ->get();
-        return \response()->json($hotelRoomCategorys,200);
+        return \response()->json($hotelTypeRooms,200);
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -43,9 +42,8 @@ class hotelRoomCategoryController extends Controller
      */
     public function show($id)
     {
-        //
-        $hotelRoomCategory = hotelRoomCategory::find($id);
-        return \response()->json($hotelRoomCategory,200);
+        $hotelTypeRoom = hotelTypeRoom::find($id);
+        return \response()->json($hotelTypeRoom,200);
     }
 
     /**
@@ -68,13 +66,11 @@ class hotelRoomCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
         try {
-            hotelRoomCategory::destroy($id);
+            hotelTypeRoom::destroy($id);
             return \response()->json(['res' => true, 'message' => 'eliminado correctamente'],200);
         } catch (\Throwable $th) {
             return \response()->json(['res' => false, 'message' => $th->getMessage()],200);
         }
-        
     }
 }
