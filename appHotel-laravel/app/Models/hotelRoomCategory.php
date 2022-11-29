@@ -38,13 +38,17 @@ class HotelRoomCategory extends Model
 		'description',
 		'hotelStatusEntity_id'
 	];
+	protected $hidden = [
+		'created_at',
+		'updated_at'
+	];
 
-	public function hotel_status_entity()
+	public function hotelStatusEntity()
 	{
-		return $this->belongsTo(HotelStatusEntity::class);
+		return $this->belongsTo(HotelStatusEntity::class,'hotelStatusEntity_id');
 	}
 
-	public function hotel_rooms()
+	public function hotelRooms()
 	{
 		return $this->hasMany(HotelRoom::class);
 	}

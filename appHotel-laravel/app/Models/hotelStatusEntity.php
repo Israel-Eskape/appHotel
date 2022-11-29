@@ -48,7 +48,6 @@ class HotelStatusEntity extends Model
 		'name',
 		'description'
 	];
-
 	protected $hidden = [
 		'created_at',
 		'updated_at'
@@ -123,7 +122,7 @@ class HotelStatusEntity extends Model
 		return $this->hasMany(HotelRole::class);
 	}
 
-	public function hotel_room_categories()
+	public function hotelRoomCategorys()
 	{
 		return $this->hasMany(HotelRoomCategory::class);
 	}

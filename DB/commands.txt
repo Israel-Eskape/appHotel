@@ -72,3 +72,4 @@
 
 8.- crear controladores se genera para todos los modelos
         php artisan make:controller hotelStatusEntityController --api
+        php artisan make:controller hotelRoomCategoryController --api
