@@ -97,7 +97,7 @@ class HotelStatusEntity extends Model
 		return $this->hasMany(HotelPay::class);
 	}
 
-	public function hotel_peoples()
+	public function hotelPeoples()
 	{
 		return $this->hasMany(HotelPeople::class);
 	}
@@ -117,7 +117,7 @@ class HotelStatusEntity extends Model
 		return $this->hasMany(HotelReservation::class);
 	}
 
-	public function hotel_roles()
+	public function hotelRoles()
 	{
 		return $this->hasMany(HotelRole::class);
 	}

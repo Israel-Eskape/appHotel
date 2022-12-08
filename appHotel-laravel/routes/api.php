@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/prueba',function (){
+Route::get('/',function (){
     return 'hola LARAVEL. Backend developed by Israel Eskape';
 });
 
@@ -33,3 +33,13 @@ Route::get('hotelTypeRooms',[\App\Http\Controllers\hotelTypeRoomController::clas
 Route::get('hotelTypeRooms/categorys',[\App\Http\Controllers\hotelTypeRoomController::class,'indexActivo']);
 Route::get('hotelTypeRooms/{hotelTypeRoom}',[\App\Http\Controllers\hotelTypeRoomController::class,'show']);
 Route::delete('hotelTypeRooms/{hotelTypeRoom}',[\App\Http\Controllers\hotelTypeRoomController::class,'detroy']);
+
+
+Route::get('peoples/{hotelPleople}',[\App\Http\Controllers\hotelPeopleController::class,'show']);
+Route::post('store',[\App\Http\Controllers\hotelPeopleController::class,'store']);
+Route::post('register',[\App\Http\Controllers\hotelPeopleController::class,'register']);
+
+Route::post('loginIndex',[\App\Http\Controllers\loginController::class,'index']);
+Route::post('login',[\App\Http\Controllers\loginController::class,'login']);
+
+

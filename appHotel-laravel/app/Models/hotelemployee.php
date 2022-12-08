@@ -38,12 +38,11 @@ class HotelEmployee extends Model
 	];
 
 	protected $hidden = [
-		'password'
+		
 	];
 
 	protected $fillable = [
 		'rfc',
-		'password',
 		'hotelPeople_id',
 		'hotelStatusEntity_id'
 	];

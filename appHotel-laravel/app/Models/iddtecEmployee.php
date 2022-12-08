@@ -40,7 +40,6 @@ class IddtecEmployee extends Model
 
 	protected $fillable = [
 		'rfc',
-		'password',
 		'hotelPeople_id',
 		'hotelStatusEntity_id'
 	];

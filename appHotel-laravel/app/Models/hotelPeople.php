@@ -6,6 +6,11 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -34,23 +39,28 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package App\Models
  */
-class HotelPeople extends Model
+
+class HotelPeople extends Authenticatable
 {
+    use HasApiTokens, HasFactory, Notifiable;
 	protected $table = 'hotelPeoples';
 
 	protected $casts = [
+		'email_verified_at' => 'datetime',
 		'hotelRole_id' => 'int',
 		'hotelStatusEntity_id' => 'int'
 	];
 
 	protected $dates = [
-		'birthday'
+		'birthday',
+		'password'
 	];
 
 	protected $fillable = [
 		'name',
 		'firstName',
 		'lastName',
+		'password',
 		'birthday',
 		'address',
 		'phone',
@@ -59,12 +69,17 @@ class HotelPeople extends Model
 		'hotelStatusEntity_id'
 	];
 
-	public function hotel_role()
+    public function setPasswordAttribute(string $password){
+        $this->attributes['password'] = bcrypt($password);
+
+    }
+
+	public function hotelRole()
 	{
 		return $this->belongsTo(HotelRole::class);
 	}
 
-	public function hotel_status_entity()
+	public function hotelStatusEntity()
 	{
 		return $this->belongsTo(HotelStatusEntity::class);
 	}

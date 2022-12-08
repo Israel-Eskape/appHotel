@@ -44,7 +44,7 @@ class HotelRole extends Model
 		return $this->belongsTo(HotelStatusEntity::class);
 	}
 
-	public function hotel_peoples()
+	public function hotelPeoples()
 	{
 		return $this->hasMany(HotelPeople::class);
 	}

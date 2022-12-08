@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('iddtecEmployees', function (Blueprint $table) {
             $table->id();
             $table->string('rfc',13);
-            $table->string('password');
             $table->unsignedBigInteger('hotelPeople_id');
             $table->unsignedBigInteger('hotelStatusEntity_id');
             $table->foreign('hotelPeople_id')
