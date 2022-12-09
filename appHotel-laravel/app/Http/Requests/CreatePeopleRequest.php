@@ -27,7 +27,7 @@ class CreatePeopleRequest extends FormRequest
             'name' => 'required|min:3|max:50',
             'firstName'=>'required|min:3|max:50',
             'lastName'=>'required|min:3|max:50',
-            'password'=>'required|min:3',
+            'password'=>'required|min:3|same:password',
             'birthday'=>'required|date',
             'address'=>'required|min:3|max:100',
             'phone'=>'required|min:3|max:50',

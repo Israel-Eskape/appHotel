@@ -13,9 +13,11 @@ class loginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(LoginRequest $request)
     {
-        return 'login}c';
+        $input = $request -> getCredentials();
+        return $input;
+        #return \response()->json(['res' => true, 'message' => ' correctamente '],200);
         
     }
     public function login(LoginRequest $request)
@@ -23,9 +25,10 @@ class loginController extends Controller
         $credentials = $request->getCredentials();
         
         if(!Auth::validate($credentials)):
-            dd('error');
-           return redirect()->to('login')
-                ->withErrors(trans('auth.failed'));
+            #dd('error');
+           #return redirect()->to('login')
+            #    ->withErrors(trans('auth.failed'));
+            return \response()->json(['res' => true, 'message' => 'NO authentificado correctamente'],500);
         endif;
         $hotelpeoples = Auth::getProvider()->retrieveByCredentials($credentials);
         
@@ -33,11 +36,26 @@ class loginController extends Controller
         Auth::login($hotelpeoples);
 
         return $this->authenticated($request, $hotelpeoples);
+       /* if(auth()->attempt(request(['email','password'])) == false) {
+            return back()->withErrors([
+                'message' => 'The email or password is incorrect, please try again',
+            ]);
+
+        } else {
+
+            if(auth()->user()->role == 'admin') {
+                return redirect()->route('admin.index');
+            } else {
+                return redirect()->to('/');
+            }
+        }*/
+    
     }
 
     protected function authenticated(Request $request, $hotelpeoples) 
     {
-        return redirect()->route('home.index');
+        #return redirect()->route('home.index');
+        return \response()->json(['res' => true, 'message' => 'authentificado correctamente'],200);
     }
     /**
      * Store a newly created resource in storage.

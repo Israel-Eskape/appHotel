@@ -53,7 +53,6 @@ class HotelPeople extends Authenticatable
 
 	protected $dates = [
 		'birthday',
-		'password'
 	];
 
 	protected $fillable = [

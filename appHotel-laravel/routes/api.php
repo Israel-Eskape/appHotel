@@ -36,10 +36,30 @@ Route::delete('hotelTypeRooms/{hotelTypeRoom}',[\App\Http\Controllers\hotelTypeR
 
 
 Route::get('peoples/{hotelPleople}',[\App\Http\Controllers\hotelPeopleController::class,'show']);
-Route::post('store',[\App\Http\Controllers\hotelPeopleController::class,'store']);
-Route::post('register',[\App\Http\Controllers\hotelPeopleController::class,'register']);
 
-Route::post('loginIndex',[\App\Http\Controllers\loginController::class,'index']);
-Route::post('login',[\App\Http\Controllers\loginController::class,'login']);
+
+
+
+
+Route::group(['middleware' => ['guest']], function() {
+    /**
+     * Register Routes
+     */
+    Route::post('store',[\App\Http\Controllers\hotelPeopleController::class,'store']);
+    Route::post('register',[\App\Http\Controllers\hotelPeopleController::class,'register']);
+
+    /**
+     * Login Routes
+     */
+
+    Route::post('login',[\App\Http\Controllers\loginController::class,'login']);
+    Route::post('index',[\App\Http\Controllers\loginController::class,'index']);
+});
+Route::group(['middleware' => ['auth']], function() {
+    /**
+     * Logout Routes
+     */
+    Route::get('logout', [\App\Http\Controllers\LogoutController::class,'logout']);
+});
 
 
